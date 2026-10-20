@@ -2277,6 +2277,12 @@ bool nsSHistory::RemoveDuplicate(int32_t aIndex, bool aKeepNext) {
       // BCHistoryLength.
       UpdateEntryLength(root1, root2, true);
     }
+    // The two entries collapse into one, so the remaining entry must keep any
+    // user interaction recorded on the removed one, or going back would skip
+    // it.
+    if (root1->GetHasUserInteraction()) {
+      root2->SetHasUserInteraction(true);
+    }
     ClearEntries(root1);
     mEntries.RemoveElementAt(aIndex);
 

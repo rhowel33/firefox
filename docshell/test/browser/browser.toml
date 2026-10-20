@@ -89,6 +89,8 @@ skip-if = [
 
 ["browser_backforward_userinteraction_about.js"]
 
+["browser_backforward_userinteraction_removed_iframe.js"]
+
 ["browser_backforward_userinteraction_systemprincipal.js"]
 
 ["browser_badCertDomainFixup.js"]
